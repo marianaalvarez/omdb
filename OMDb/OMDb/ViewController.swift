@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UIPageViewControllerDataSource {
     
+    let manager = MovieManager.sharedInstance
+    
     var pageViewController: UIPageViewController!
     var pageImages: NSArray!
 

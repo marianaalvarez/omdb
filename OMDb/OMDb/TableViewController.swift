@@ -8,11 +8,18 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, UISearchBarDelegate {
 
+    let manager = MovieManager.sharedInstance
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.searchBar.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("reloadData"), name: "didAddMovie", object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,16 +37,35 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.manager.movieList.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        
+        let movie = self.manager.movieList[indexPath.row]
+        
+        cell.textLabel!.text = movie.title
+        cell.detailTextLabel!.text = movie.year
 
         return cell
     }
 
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        if !searchBar.text!.isEmpty {
+            manager.getMovies(searchBar.text!)
+        }
+        self.searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        self.searchBar.resignFirstResponder()
+    }
+    
+    func reloadData() {
+        self.tableView.reloadData()
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -76,14 +102,10 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
 
 }
