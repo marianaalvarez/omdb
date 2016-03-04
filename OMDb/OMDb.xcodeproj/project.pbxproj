@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		05626B981C87B440006FEB73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05626B971C87B440006FEB73 /* AppDelegate.swift */; };
-		05626B9A1C87B440006FEB73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05626B991C87B440006FEB73 /* ViewController.swift */; };
 		05626B9D1C87B440006FEB73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05626B9B1C87B440006FEB73 /* Main.storyboard */; };
 		05626B9F1C87B440006FEB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05626B9E1C87B440006FEB73 /* Assets.xcassets */; };
 		05626BA21C87B440006FEB73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05626BA01C87B440006FEB73 /* LaunchScreen.storyboard */; };
+		05626BAC1C88728B006FEB73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05626BAB1C88728B006FEB73 /* ViewController.swift */; };
+		05626BAE1C88755C006FEB73 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05626BAD1C88755C006FEB73 /* ContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05626B941C87B440006FEB73 /* OMDb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMDb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05626B971C87B440006FEB73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		05626B991C87B440006FEB73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		05626B9C1C87B440006FEB73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05626B9E1C87B440006FEB73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05626BA11C87B440006FEB73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05626BA31C87B440006FEB73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05626BAB1C88728B006FEB73 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		05626BAD1C88755C006FEB73 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				05626B971C87B440006FEB73 /* AppDelegate.swift */,
-				05626B991C87B440006FEB73 /* ViewController.swift */,
 				05626B9B1C87B440006FEB73 /* Main.storyboard */,
 				05626B9E1C87B440006FEB73 /* Assets.xcassets */,
 				05626BA01C87B440006FEB73 /* LaunchScreen.storyboard */,
 				05626BA31C87B440006FEB73 /* Info.plist */,
+				05626BAB1C88728B006FEB73 /* ViewController.swift */,
+				05626BAD1C88755C006FEB73 /* ContentViewController.swift */,
 			);
 			path = OMDb;
 			sourceTree = "<group>";
@@ -136,7 +139,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05626B9A1C87B440006FEB73 /* ViewController.swift in Sources */,
+				05626BAC1C88728B006FEB73 /* ViewController.swift in Sources */,
+				05626BAE1C88755C006FEB73 /* ContentViewController.swift in Sources */,
 				05626B981C87B440006FEB73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +258,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.ProjetosMariana.OMDb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -265,6 +270,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.ProjetosMariana.OMDb;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
