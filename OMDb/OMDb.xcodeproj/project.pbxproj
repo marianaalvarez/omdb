@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		054C827D1C8933B1005EE7DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C827C1C8933B1005EE7DB /* LoginViewController.swift */; };
+		054C827F1C893EAE005EE7DB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C827E1C893EAE005EE7DB /* TableViewController.swift */; };
 		05626B981C87B440006FEB73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05626B971C87B440006FEB73 /* AppDelegate.swift */; };
 		05626B9D1C87B440006FEB73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05626B9B1C87B440006FEB73 /* Main.storyboard */; };
 		05626B9F1C87B440006FEB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05626B9E1C87B440006FEB73 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		054C827C1C8933B1005EE7DB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		054C827E1C893EAE005EE7DB /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		05626B941C87B440006FEB73 /* OMDb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMDb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05626B971C87B440006FEB73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05626B9C1C87B440006FEB73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				05626BA31C87B440006FEB73 /* Info.plist */,
 				05626BAB1C88728B006FEB73 /* ViewController.swift */,
 				05626BAD1C88755C006FEB73 /* ContentViewController.swift */,
+				054C827C1C8933B1005EE7DB /* LoginViewController.swift */,
+				054C827E1C893EAE005EE7DB /* TableViewController.swift */,
 			);
 			path = OMDb;
 			sourceTree = "<group>";
@@ -139,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				054C827D1C8933B1005EE7DB /* LoginViewController.swift in Sources */,
 				05626BAC1C88728B006FEB73 /* ViewController.swift in Sources */,
 				05626BAE1C88755C006FEB73 /* ContentViewController.swift in Sources */,
+				054C827F1C893EAE005EE7DB /* TableViewController.swift in Sources */,
 				05626B981C87B440006FEB73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +301,7 @@
 				05626BA81C87B440006FEB73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
