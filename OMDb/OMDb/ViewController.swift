@@ -20,16 +20,22 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor.blackColor()
+        
+        // Array de imagens
         self.pageImages = NSArray(objects: "perfume", "shutterIsland", "silenceOfTheLambs")
         
+        // Instancia Page View Controller
         self.pageViewController = self.storyboard!.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         self.pageViewController.dataSource = self
         
+        // Retorna instância de Content View Controller
         let startVC = self.viewControllerAtIndex(0) as ContentViewController
         let viewControllers = NSArray(object: startVC)
         
         self.pageViewController.setViewControllers(viewControllers as? [UIViewController], direction: .Forward, animated: true, completion: nil)
         self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - self.loginButton.frame.height)
+    
         self.addChildViewController(self.pageViewController)
         self.view.addSubview(self.pageViewController.view)
         self.pageViewController.didMoveToParentViewController(self)
@@ -42,14 +48,15 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     }
     
     func viewControllerAtIndex(index: Int) -> ContentViewController {
+        
         if self.pageImages.count == 0 || index >= self.pageImages.count {
             return ContentViewController()
         }
         
         let vc: ContentViewController = self.storyboard!.instantiateViewControllerWithIdentifier("ContentViewController") as! ContentViewController
-        print(self.pageImages[index])
         vc.imageFile = self.pageImages[index] as! String
         vc.pageIndex = index
+        vc.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - self.loginButton.frame.height)
         
         return vc
     }
@@ -58,6 +65,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
+        // Pega ContentViewController atual
         let vc = viewController as! ContentViewController
         var index = vc.pageIndex as Int
         
@@ -66,6 +74,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         }
         
         index--
+        
+        // Retorna ContentViewController anterior
         return self.viewControllerAtIndex(index)
         
     }
@@ -85,6 +95,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
             return nil
         }
         
+        // Retorna ContentViewController posterior
         return self.viewControllerAtIndex(index)
         
     }

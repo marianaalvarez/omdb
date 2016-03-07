@@ -14,19 +14,15 @@ class Movie: NSObject {
     var title: String!
     var year: String!
     var genre: String!
-    var director: String!
-    var plot: String!
-    var language: String!
-    var country: String!
+    var director: String?
+    var plot: String?
+    var language: String?
+    var country: String?
+    var runtime: String?
+    var poster: String?
     
     override init() {
         
-    }
-    
-    init(title: String, year: String, id: String) {
-        self.title = title
-        self.year = year
-        self.id = id
     }
     
 }

@@ -17,8 +17,8 @@ class ContentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.imageView.image = UIImage(named: self.imageFile)
         
+        self.imageView.image = UIImage(named: self.imageFile)
     }
 
     override func didReceiveMemoryWarning() {

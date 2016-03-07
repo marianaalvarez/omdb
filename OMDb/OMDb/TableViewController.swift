@@ -29,7 +29,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - Table view data source
 
     @IBAction func logout(sender: AnyObject) {
-        self.dismissViewControllerAnimated(false, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -51,10 +51,18 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
 
         return cell
     }
+    
+    func reloadData() {
+        self.tableView.reloadData()
+    }
+    
+    // MARK: - Search bar data source
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         if !searchBar.text!.isEmpty {
-            manager.getMovies(searchBar.text!)
+            // Substituindo caracteres especiais por %
+            let newString = searchBar.text!.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+            manager.getMovies(newString!)
         }
         self.searchBar.resignFirstResponder()
     }
@@ -62,50 +70,21 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         self.searchBar.resignFirstResponder()
     }
-    
-    func reloadData() {
-        self.tableView.reloadData()
-    }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if segue.identifier == "showDetail" {
+            let cell = sender as! UITableViewCell
+            let indexPath: NSIndexPath = self.tableView.indexPathForCell(cell)!
+            
+            if manager.movieList[indexPath.row].director != nil {
+                let destView = segue.destinationViewController as! DetailViewController
+                destView.movie = manager.movieList[indexPath.row]
+            } else {
+                self.manager.getMovieInfo(manager.movieList[indexPath.row])
+            }
+        }
     }
 
 }

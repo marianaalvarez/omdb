@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		053DC2B91C89BA4100F0250C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053DC2B81C89BA4100F0250C /* Movie.swift */; };
+		053DC2BB1C8A699400F0250C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053DC2BA1C8A699400F0250C /* DetailViewController.swift */; };
 		054C827D1C8933B1005EE7DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C827C1C8933B1005EE7DB /* LoginViewController.swift */; };
 		054C827F1C893EAE005EE7DB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C827E1C893EAE005EE7DB /* TableViewController.swift */; };
 		054C82831C89424E005EE7DB /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C82821C89424E005EE7DB /* MovieManager.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		053DC2B81C89BA4100F0250C /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		053DC2BA1C8A699400F0250C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		054C827C1C8933B1005EE7DB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		054C827E1C893EAE005EE7DB /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		054C82821C89424E005EE7DB /* MovieManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		053DC2BC1C8D1B9000F0250C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				053DC2B81C89BA4100F0250C /* Movie.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
 		054C82801C8941FA005EE7DB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +62,7 @@
 				05626BAD1C88755C006FEB73 /* ContentViewController.swift */,
 				054C827C1C8933B1005EE7DB /* LoginViewController.swift */,
 				054C827E1C893EAE005EE7DB /* TableViewController.swift */,
+				053DC2BA1C8A699400F0250C /* DetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -60,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				054C82821C89424E005EE7DB /* MovieManager.swift */,
-				053DC2B81C89BA4100F0250C /* Movie.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -85,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				05626B971C87B440006FEB73 /* AppDelegate.swift */,
+				053DC2BC1C8D1B9000F0250C /* Entities */,
 				054C82811C89420F005EE7DB /* Model */,
 				054C82801C8941FA005EE7DB /* ViewControllers */,
 				05626B9B1C87B440006FEB73 /* Main.storyboard */,
@@ -174,6 +185,7 @@
 				054C827F1C893EAE005EE7DB /* TableViewController.swift in Sources */,
 				054C82831C89424E005EE7DB /* MovieManager.swift in Sources */,
 				05626B981C87B440006FEB73 /* AppDelegate.swift in Sources */,
+				053DC2BB1C8A699400F0250C /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
